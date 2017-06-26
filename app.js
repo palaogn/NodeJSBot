@@ -119,17 +119,18 @@ function processMessage(event) {
 
 function findMovie(userId, movieTitle) {
 	//sendMessage(userId, {text: "Hello there"});
-	        
+
 	var query = {user_id: userId};
 	var update = {
 	  user_id: userId, title: "Now you see me", plot: "Now you see me", date: "1027/07/26", runtime: "2017", director: "John Doe", cast: "", rating: "8", poster_url: ""
 	};
-    
+
 	var options = {upsert: true};
-		
+
 	Movie.findOneAndUpdate(query, update, options, function(err, mov) {
 	  if (err) {
 		console.log("Database error: " + err);
+    sendMessage(userId, {text: "Sorry, something went wrong, please try again"});
 	  } else {
 		message = {
 		  attachment: {
@@ -156,16 +157,16 @@ function findMovie(userId, movieTitle) {
 		sendMessage(userId, message);
 	  }
 	});
-	
+
 	sendMessage(userId, {text: "Hello there"});
-	
+
 	/*
   request("http://www.omdbapi.com/?type=movie&t=" + movieTitle,   function (error, response, body) {
     if (!error && response.statusCode === 200) {
       var movieObj = JSON.parse(body);
 	  var movieObj = {user_id: "", title: "Now you see me", plot: "Now you see me", date: "1027/07/26", runtime: "2017", director: "John Doe", cast: "", rating: "8", poster_url: ""};
       if (movieObj.Response === "True") {
-		  
+
         var query = {user_id: userId};
         var update = {
           user_id: userId,
