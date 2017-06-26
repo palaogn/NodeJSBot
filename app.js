@@ -219,6 +219,7 @@ function findMovie(userId, movieTitle) {
 */
 }
 
+
 function getMovieDetail(userId, field) {
   Movie.findOne({user_id: userId}, function(err, movie) {
     if(err) {
