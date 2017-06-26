@@ -117,7 +117,7 @@ function processMessage(event) {
 }
 
 function findMovie(userId, movieTitle) {
-	sendMessage(userId, "Hello there.");
+	sendMessage(userId, {text: "Hello there"});
 	/*
   //request("http://www.omdbapi.com/?type=movie&t=" + movieTitle,   function (error, response, body) {
     //if (!error && response.statusCode === 200) {
