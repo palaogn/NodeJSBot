@@ -117,8 +117,8 @@ function processMessage(event) {
 }
 
 function findMovie(userId, movieTitle) {
-	
-
+	sendMessage(userId, "Hello there.");
+	/*
   //request("http://www.omdbapi.com/?type=movie&t=" + movieTitle,   function (error, response, body) {
     //if (!error && response.statusCode === 200) {
       //var movieObj = JSON.parse(body);
@@ -174,7 +174,7 @@ function findMovie(userId, movieTitle) {
     //  sendMessage(userId, {text: "Something went wrong. Try again."});
     //}
   //});
-
+*/
 }
 
 function getMovieDetail(userId, field) {
