@@ -137,9 +137,9 @@ function findMovie(userId, movieTitle) {
 			payload: {
 			  template_type: "generic",
 			  elements: [{
-				title: movieObj.Title,
+				title: update.title,
 				subtitle: "Is this the movie you are looking for?",
-				image_url: movieObj.Poster === "N/A" ? "http://placehold.it/350x150" : movieObj.Poster,
+				image_url: update.poster_url === "N/A" ? "http://placehold.it/350x150" : update.poster_url,
 				buttons: [{
 				  type: "postback",
 				  title: "Yes",
