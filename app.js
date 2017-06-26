@@ -100,7 +100,7 @@ function processMessage(event) {
       switch (formattedMsg) {
         case "plot":
         case "date":
-          sendMessage(userId, {text: "you inputted date"});
+          sendMessage(senderId, {text: "you inputed date"});
         case "runtime":
         case "director":
         case "cast":
