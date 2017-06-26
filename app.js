@@ -117,10 +117,13 @@ function processMessage(event) {
 }
 
 function findMovie(userId, movieTitle) {
-  request("http://www.omdbapi.com/?type=movie&t=" + movieTitle, function (error, response, body) {
-    if (!error && response.statusCode === 200) {
-      var movieObj = JSON.parse(body);
-      if (movieObj.Response === "True") {
+	
+
+  //request("http://www.omdbapi.com/?type=movie&t=" + movieTitle,   function (error, response, body) {
+    //if (!error && response.statusCode === 200) {
+      //var movieObj = JSON.parse(body);
+	  var movieObj = {user_id: "", title: "Now you see me", plot: "Now you see me", date: "1027/07/26", runtime: "2017", director: "John Doe", cast: "", rating: "8", poster_url: ""};
+      //if (movieObj.Response === "True") {
         var query = {user_id: userId};
         var update = {
           user_id: userId,
@@ -163,14 +166,15 @@ function findMovie(userId, movieTitle) {
             sendMessage(userId, message);
           }
         });
-      } else {
-          console.log(movieObj.Error);
-          sendMessage(userId, {text: movieObj.Error});
-      }
-    } else {
-      sendMessage(userId, {text: "Something went wrong. Try again."});
-    }
-  });
+      //} else {
+      //    console.log(movieObj.Error);
+      //    sendMessage(userId, {text: movieObj.Error});
+      //}
+    //} else {
+    //  sendMessage(userId, {text: "Something went wrong. Try again."});
+    //}
+  //});
+
 }
 
 function getMovieDetail(userId, field) {
