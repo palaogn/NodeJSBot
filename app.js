@@ -122,7 +122,7 @@ function findMovie(userId, movieTitle) {
 
 	var query = {user_id: userId};
 	var update = {
-	  user_id: userId, title: "Now you see me", plot: "Now you see me", date: "1027/07/26", runtime: "2017", director: "John Doe", cast: "", rating: "8", poster_url: ""
+	  user_id: userId, title: "Now you see me", plot: "Now you see me", date: "1027/07/26", runtime: "2017", director: "John Doe", cast: "", rating: "8", poster_url: "http://bit.ly/2seK66Q"
 	};
 
 	var options = {upsert: true};
