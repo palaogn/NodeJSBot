@@ -130,7 +130,6 @@ function findMovie(userId, movieTitle) {
 	Movie.findOneAndUpdate(query, update, options, function(err, mov) {
 	  if (err) {
 		console.log("Database error: " + err);
-    sendMessage(userId, {text: "Sorry, something went wrong, please try again"});
 	  } else {
 		message = {
 		  attachment: {
@@ -154,7 +153,7 @@ function findMovie(userId, movieTitle) {
 			}
 		  }
 		};
-		sendMessage(userId, message);
+    sendMessage(userId, message);
 	  }
 	});
 
